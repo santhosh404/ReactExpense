@@ -1,0 +1,56 @@
+###
+POST http://localhost:4000/api/register
+Content-Type: application/json
+
+{
+"firstName": "siva", 
+"lastName": "a", 
+"email":"siva@gmail.com", 
+"password": "233"
+}
+
+###
+POST http://localhost:4000/api/login
+Content-Type: application/json
+
+{
+    "email": "siva@gmail.com",
+    "password": "233"
+}
+
+###
+GET http://localhost:4000/api/userDetails
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTNlNTBiNjY0Yzk3ZTE2NGI5MzY1YyIsImlhdCI6MTY4MzM3ODk3NSwiZXhwIjoxNjgzMzgyNTc1fQ.yb3LyOypOIl9ehA6b691Uv5fRcA-DfpPbReHkQq6imk
+
+###
+POST http://localhost:4000/api/addexpense
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTNlNTBiNjY0Yzk3ZTE2NGI5MzY1YyIsImlhdCI6MTY4MzM3ODk3NSwiZXhwIjoxNjgzMzgyNTc1fQ.yb3LyOypOIl9ehA6b691Uv5fRcA-DfpPbReHkQq6imk
+
+{
+    "userId": "6453e50b664c97e164b9365c",
+    "expenseName": "Breakfast",
+    "expenseDescription": "",
+    "expenseAmount":150,
+    "expenseDate":"2023-05-07"
+}
+
+###
+POST http://localhost:4000/api/getcurrentexpense/6453e50b664c97e164b9365c
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTNlNTBiNjY0Yzk3ZTE2NGI5MzY1YyIsImlhdCI6MTY4MzQzNDYwNywiZXhwIjoxNjgzNDM4MjA3fQ.QuaQUJbiP3VKQVSwOPJE-utEqA2M7pWEitLu4VFEUSs
+
+{
+    "date":"2023-05-06"
+}
+
+###
+GET http://localhost:4000/api/expenses/6453e50b664c97e164b9365c/today 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTNlNTBiNjY0Yzk3ZTE2NGI5MzY1YyIsImlhdCI6MTY4MzM2NDUyOSwiZXhwIjoxNjgzMzY4MTI5fQ.08MxPS0u1QNet6jmFVRWYuT1nAo65cKE9-w920nTDJA
+
+###
+GET http://localhost:4000/api/expenses/groupbydate/6453e50b664c97e164b9365c
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTNlNTBiNjY0Yzk3ZTE2NGI5MzY1YyIsImlhdCI6MTY4MzQzMDU0NywiZXhwIjoxNjgzNDM0MTQ3fQ.D_gK-2DmztcS_PHIdr1suDA3WCC3Bc-i3vKU8JhfkhU
