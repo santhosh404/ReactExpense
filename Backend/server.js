@@ -15,7 +15,7 @@ db.once("open", () => console.log("Database Connected!"));
 //Using cors
 app.use(
   cors({
-    origin: "http://localhost:3000", // replace with your frontend URL
+    origin: "https://reactexpenses.onrender.com/", // replace with your frontend URL
     methods: ["GET", "POST"], // specify the allowed HTTP methods
     allowedHeaders: ["Content-Type", "Authorization"], // specify the allowed headers
   })
