@@ -88,7 +88,7 @@ export default function AddExpense() {
       <Navbar />
       <Container maxW="500px">
         <Card style={{ marginTop: "50px" }} className="card">
-          <CardHeader>
+          <CardHeader className="cardHeader">
             <Heading
               as="h3"
               style={{ textAlign: "center" }}

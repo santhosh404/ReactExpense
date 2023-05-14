@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Sacramento&family=DM+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Sacramento&family=DM+Sans&family=Poppins:wght@300&display=swap");
 
 * {
   margin: 0;
@@ -231,7 +231,10 @@
 }
 
 
-@media screen and (max-width: 330px) {
+@media screen and (max-width: 450px) {
+  body {
+    font-family: 'Poppins', sans-serif !important;
+  }
   .navbar {
     display: none !important;
   }
@@ -280,9 +283,9 @@
   }
   .greetingBox {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    height: 250px;
+    height: 400px;
     position: relative;
-    bottom: 120px;
+    bottom: 160px;
     width: 90%;
     margin: 0px auto;
     border-radius: 30px;
@@ -299,7 +302,7 @@
     font-size: 15px;
     margin: 10px;
     font-weight: 900;
-    margin-top: 30%;
+    margin-top: 25%;
   }
   .expense {
     font-size: 30px;
@@ -321,6 +324,57 @@
   }
   .card {
     margin-top: 5px !important;
+    box-shadow: none !important;
+  }
+  .addExpenseHeader {
+    margin-top: 150px;
+    text-align: left !important;
+    font-weight: 900 !important;
+  }
+  .cardHeader {
+    padding: 0px 0px 0px 20px !important;
+  }
+  .signupContainer {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100% !important;
+    padding: 15px;
+  }
+  .signupContainer button {
+    margin: 0px 0px !important;
+  }
+  .container {
+    box-shadow: none;
+  }
+  .registration header {
+    font-weight: 900;
+    text-align: left;
+    margin-top: 50px;
+  } 
+  .loginContainer {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100% !important;
+    padding: 15px;
   }
 
+  .loginContainer button {
+    margin: 0px 0px !important;
+  }
+
+  .login header {
+    font-weight: 900;
+    text-align: left;
+    margin-top: 100px;
+  } 
+  .signup {
+    margin-top: 40px;
+  }
+  .summaryContainer {
+    margin-top: 70% !important;
+  }
 }

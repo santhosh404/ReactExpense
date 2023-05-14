@@ -133,7 +133,9 @@ export default function Signup() {
                 </p>
               )}
           </div>
-          <button type="submit" className="button">{loading && <Spinner size="sm" mt={2} mr={2}/>}Signup </button>
+          <div className="signupContainer">
+           <button type="submit" className="button">{loading && <Spinner size="sm" mt={2} mr={2}/>}Signup </button>
+          </div>
         </form>
         <div className="signup">
           <span className="signup">

@@ -41,11 +41,11 @@ export default function ExpenseSummary() {
   const token = window.localStorage.getItem("token");
 
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     groupedExpenses(userId, token)
       .then((data) => {
         setGroupedData(data);
-        setLoading(false)
+        setLoading(false);
       })
       .catch((err) => {
         console.error(err.message);
@@ -59,20 +59,20 @@ export default function ExpenseSummary() {
           progress: undefined,
           theme: "light",
         });
-        setLoading(false)
+        setLoading(false);
       });
   }, []);
 
   function handleClick(data) {
     setIsOpen(true);
-    setLoading(true)
+    setLoading(true);
     console.log(data);
     getParticularExpense(token, userId, data._id)
       .then((response) => {
         setParticularData(response.todayExpense);
         setTotalExpense(response.totalExpense);
         setExpenseDate(data._id);
-        setLoading(false)
+        setLoading(false);
       })
       .catch((err) => {
         console.error(err.message);
@@ -86,7 +86,7 @@ export default function ExpenseSummary() {
           progress: undefined,
           theme: "light",
         });
-        setLoading(false)
+        setLoading(false);
       });
   }
 
@@ -94,7 +94,7 @@ export default function ExpenseSummary() {
     window.localStorage.removeItem("token");
     window.localStorage.removeItem("UserID");
     navigate("/login");
-  }
+  };
 
   return (
     <div>
@@ -160,7 +160,11 @@ export default function ExpenseSummary() {
         </ModalContent>
       </Modal>
 
-      <Container maxW="1000px" style={{ marginTop: "100px" }}>
+      <Container
+        maxW="1000px"
+        style={{ marginTop: "100px" }}
+        className="summaryContainer"
+      >
         <TableContainer
           style={{
             border: "1px solid lightgray",
@@ -177,6 +181,11 @@ export default function ExpenseSummary() {
               </Tr>
             </Thead>
             <Tbody>
+              {groupedData.length === 0 && !loading && (
+                <p style={{margin: "20px" }}>
+                  No Records found.
+                </p>
+              )}
               {groupedData.map((data, i) => {
                 return (
                   <Tr key={i}>
