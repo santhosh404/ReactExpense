@@ -21,6 +21,7 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 import { ToastContainer, toast } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
 
 import { CloseIcon } from "@chakra-ui/icons";
 
@@ -33,6 +34,9 @@ export default function ExpenseSummary() {
   const [totalExpense, setTotalExpense] = useState();
   const [expenseDate, setExpenseDate] = useState();
   const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
+
   const userId = window.localStorage.getItem("UserID");
   const token = window.localStorage.getItem("token");
 
@@ -84,6 +88,12 @@ export default function ExpenseSummary() {
         });
         setLoading(false)
       });
+  }
+
+  const handleLogout = () => {
+    window.localStorage.removeItem("token");
+    window.localStorage.removeItem("UserID");
+    navigate("/login");
   }
 
   return (
@@ -182,6 +192,24 @@ export default function ExpenseSummary() {
         </TableContainer>
       </Container>
       <ToastContainer />
+
+      <div className="footer">
+        <div className="footerItems">
+          <Link className="footerIcons" to="/dashboard">
+            <i class="fa-solid fa-house"></i> <small> Dashboard </small>{" "}
+          </Link>
+          <Link className="footerIcons" to="/addexpense">
+            <i class="fa-solid fa-plus"></i> <small> Add expense </small>{" "}
+          </Link>
+          <Link className="footerIcons" to="/summary">
+            <i class="fa-solid fa-circle-info"></i> <small>Summary</small>{" "}
+          </Link>
+          <div className="footerIcons" onClick={handleLogout}>
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>{" "}
+            <small>Logout</small>{" "}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -58,6 +58,7 @@ export default function Navbar() {
         alignItems="end"
         gap="2"
         style={{ margin: "20px" }}
+        className="navbar"
       >
         <Box mr={2}>
           <Link to="/dashboard">

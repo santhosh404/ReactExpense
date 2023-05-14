@@ -93,9 +93,6 @@ export default function Login() {
               </p>
             )}
           </div>
-          <a href="#" className="forgotPassword">
-            Forgot password?
-          </a>
           <button type="submit" className="button">{loading && <Spinner size="sm" mt={2} mr={2}/>}Login </button>
         </form>
         <div className="signup">

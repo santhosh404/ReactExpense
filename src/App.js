@@ -2,6 +2,8 @@ import "./App.css";
 import {authProtectedRoutes, publicRoutes} from "./routes";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProtector } from "./AuthProtected";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 function App() {
   return (
